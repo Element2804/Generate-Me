@@ -21,7 +21,7 @@ function renderLicenseBadge(data) {
 
 // creates the structure of the README
 function generateMarkdown(data) {
-  return `# <h1>${data.title}</h1>
+  return `# ${data.title}
 
 ## License
   This project is covered under the ${data.license} license.
@@ -59,9 +59,8 @@ ${data.test}
 ## Questions
 If you have any questions feel free to email me at ${data.email}
 
-
 `;
-}
+};
 
 // exports the file so its accessible by index.js
 module.exports = generateMarkdown;
