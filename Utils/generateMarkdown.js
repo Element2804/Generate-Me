@@ -18,28 +18,18 @@ function renderLicenseBadge(data) {
     if (licenseType === "AGPL") {
         licenseString = `[![License:GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`
       };
-      console.log(data.license);
+   
     return licenseString
     
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-//function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-/* function renderLicenseSection(license) {
-    const licenses = {
-        MIT: {
-            badge:
-        }
-    }
-} */
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+## License
+  This project is covered under the ${data.license} license.
+  ${renderLicenseBadge(data)} 
  
 ## Description
 ${data.description}
@@ -48,26 +38,29 @@ ${data.description}
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Test](#test)
 - [Credits](#credits)
-- [License](#license)
+- [Github](#github)
+- [Contribution](#contribution)
+- [Questions](#questions)
 
 ## Installation
-
-In order to run, Node.js and the Inquirer NPM need to be installed. Then open file in Visual Studio code and pull up the terminal.
-
+${data.installation}
 
 ## Usage
-
-After all dependencies have been installed. Type "node index.js" in to the terminal. Then follow prompts to generate a custom README
-
-## License
-${renderLicenseBadge(data)}
+${data.usage}
 
 ## Github
 ${data.github}
 
-## Email
-${data.email}
+## Contribution
+${data.contribution}
+
+## Test
+${data.test}
+
+## Questions
+If you have any questions feel free to email me at ${data.email}
 
 
 `;
