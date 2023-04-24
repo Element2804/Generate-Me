@@ -3,16 +3,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./Utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// 
 const questions = [{
     type: 'input',
     name: 'title',
     message: 'Please enter the project title.',
+
   },
   {
     type: 'input',
     name: 'description',
-    message: 'Please enter a short description of your project.',    
+    message: 'Please enter a description of your project.',    
      },
   {
     type: 'list',
@@ -22,20 +23,48 @@ const questions = [{
   },
   {
     type: 'input',
+    name: 'installation',
+    message: 'Please enter instructions on how to install the project',    
+     },
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'Please enter a description on how to use the project',    
+     },
+  {
+    type: 'input',
+    name: 'test',
+    message: 'Please describe how to test the project',    
+     },
+  {
+    type: 'input',
     name: 'github',
     message: 'Please enter your Github username.',    
      },
   {
     type: 'input',
-    name: 'email',
-    message: 'Please enter your Email address.',    
+    name: 'contribution',
+    message: 'Please enter your Contribution guidelines',    
      },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Please enter your Email address.',
+    validate: (value) => {
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); // 
+  
+        return valid ? true : "Please enter a valid email address.";
+
+     
+    },
+},       
+     
 
 ];
 
 
 
-// TODO: Create a function to write README file
+// writes README file with information included.
 function writeToFile(fileName, data) {
     
     const content = generateMarkdown(data);
@@ -47,15 +76,13 @@ function writeToFile(fileName, data) {
     });
 } 
 
-// TODO: Create a function to initialize app
+// initialize function that prompts the user for questions
 function init() {
     inquirer
     .prompt(questions)
    .then((data) => {
-    
-        const fileName = "README.md";
-     
-        writeToFile(fileName, data);
+         
+        writeToFile("README.md", data);
       });
 }
 
