@@ -16,9 +16,8 @@ function renderLicenseBadge(data) {
         licenseString = `![License:GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`
       };
    
-    return licenseString
-    
-}
+    return licenseString    
+};
 
 // creates the structure of the README
 function generateMarkdown(data) {
