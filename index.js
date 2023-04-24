@@ -72,7 +72,7 @@ function writeToFile(fileName, data) {
         if (error) {
             return console.log(error)
         }
-        console.log('success')
+        console.log('Success!')
     });
 } 
 
