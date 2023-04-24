@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./Utils/generateMarkdown.js');
 
-// 
+// information to fill the README
 const questions = [{
     type: 'input',
     name: 'title',
@@ -29,7 +29,7 @@ const questions = [{
   {
     type: 'input',
     name: 'usage',
-    message: 'Please enter a description on how to use the project',    
+    message: 'Please enter a brief description on how to use the project',    
      },
   {
     type: 'input',
