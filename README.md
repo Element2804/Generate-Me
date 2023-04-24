@@ -21,6 +21,8 @@ To install fork the repository and navigate to the command line then type npm i 
 ## Usage
 
 After the installation of inquirer type node.js and follow the prompts from the questions.
+![ezgif-2-d556a51284](https://user-images.githubusercontent.com/103654389/234059176-81ad0232-c0e4-4c58-9898-703812a1daea.gif)
+
 
 ## Credits
 - https://www.npmjs.com/package/inquirer/v/8.2.4
@@ -28,3 +30,4 @@ After the installation of inquirer type node.js and follow the prompts from the 
 
 
 ## Walkthrough-Video
+- https://drive.google.com/file/d/1mTQYmlTSMA_784HpyClmlntrAxBjQOsh/view
